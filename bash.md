@@ -74,8 +74,7 @@
 ```function greet {
              echo "Hi, $1"
      }
-greet pankaj
-```
+greet pankaj```
 
 ## working with arguments:
 `echo $1`
@@ -85,8 +84,7 @@ for i in $@ #for array of arguments
 do
      echo $i
 done
-echo "There are $# arguments"
-```
+echo "There are $# arguments"```
 
 ## getting input during execution
 
@@ -105,5 +103,4 @@ else
          echo "username: " $1
          echo "UserID : $2"
          echo "Favorite Number: $3"
-fi
-```
+fi```
