@@ -71,7 +71,8 @@
 - `echo "some text" >> file.txt` apend to the file
 
 # bash functions:
-``` function greet {
+```
+function greet {
              echo "Hi, $1"
      }
 greet pankaj ```
