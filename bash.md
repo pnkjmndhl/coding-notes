@@ -1,11 +1,41 @@
-# Bash Scripts:
+## 1. Introduction
+
+bash: Bourne Again Shell
+
+### helpful keyboard shortcuts:
+#### tab completion
+- `Ctrl A`: beginning of line
+- `Ctrl E`: End of line (^ = ctrl)
+- `Ctrl + Shift + C` : Copy
+- `Ctrl + Shift + V` : Paste
+
+#### common  commands:
+- `pwd` prints working directory
+- `ls` lists the files and folders in current working directory
+- `man` manual (forward: f, backward: b, q: exit)
+- `mkdir` make a directory
+- `rmdir` delete a directory
+- `cd` change directory
+- `cp - v` verbose copy
+- `cat`  concatenate / see inside a file
+
+- `~`  home directory
+- `..`  parent directory
+- `.`  current directory
+
+#### wild Cards:
+- `*` # any number of characters
+- `?` # one character![image](https://user-images.githubusercontent.com/28738378/212370036-e9843bd3-0e3c-4d39-bca8-43ef5d5b7c62.png)
+
+
+## 6. Scripts:
 
 ### general
 - `#!/bin/bash` shebang and path to the bash executable
 - `#` comment
 - `bash ls.sh` to run the script
 - `./ls.sh` to run an executable code
-- `ls.sh` if the file is exactly on the path environment variable
+- `ls.sh` if the file is exactly on the path environment variable 
 
 ### echo
 - special characters should always be escaped using backslash
