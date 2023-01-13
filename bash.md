@@ -75,7 +75,8 @@
 function greet {
              echo "Hi, $1"
      }
-greet pankaj ```
+greet pankaj 
+```
 
 ## working with arguments:
 `echo $1`
@@ -96,10 +97,12 @@ echo "There are $# arguments" ```
 - `echo name: $name, pass $pass, animal: $animal`
 
 # ensuring a response:
-``` if [$# -lt 3 ]; then
+``` 
+if [$# -lt 3 ]; then
         echo "Not enough arguments"
 else
          echo "username: " $1
          echo "UserID : $2"
          echo "Favorite Number: $3"
-fi ```
+fi 
+```
