@@ -81,11 +81,13 @@ greet pankaj
 ## working with arguments:
 `echo $1`
 
-``` for i in $@ #for array of arguments
+``` 
+for i in $@ #for array of arguments
 do
      echo $i
 done
-echo "There are $# arguments" ```
+echo "There are $# arguments" 
+```
 
 ## getting input during execution
 
