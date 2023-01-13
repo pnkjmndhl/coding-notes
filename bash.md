@@ -1,18 +1,18 @@
-## Bash Scripts:
+# Bash Scripts:
 
-# general
--'#!/bin/bash' shebang and path to the bash executable
--'#' comment
--'bash ls.sh' to run the script
--'./ls.sh' to run an executable code
--'ls.sh' if the file is exactly on the path environment variable
+## general
+- `#!/bin/bash` shebang and path to the bash executable
+- `#` comment
+- `bash ls.sh` to run the script
+- `./ls.sh` to run an executable code
+- `ls.sh` if the file is exactly on the path environment variable
 
-# echo
--special characters should always be escaped using backslash
-'echo $ddd' to access ddd variable
--'echo ddd' prints exactly
--'echo 'ddd'' even if it has variable inside, it comes out literally
--echo "ddd" # middle ground ??
+## echo
+- special characters should always be escaped using backslash
+- `echo $ddd` to access ddd variable
+- `echo ddd` prints exactly
+- `echo 'ddd'` even if it has variable inside, it comes out literally
+- 'echo "ddd"' middle ground ??
 
 # working with variables:
 a=3
