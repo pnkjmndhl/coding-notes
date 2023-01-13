@@ -1,30 +1,30 @@
 # Bash Scripts:
 
-## general
+### general
 - `#!/bin/bash` shebang and path to the bash executable
 - `#` comment
 - `bash ls.sh` to run the script
 - `./ls.sh` to run an executable code
 - `ls.sh` if the file is exactly on the path environment variable
 
-## echo
+### echo
 - special characters should always be escaped using backslash
 - `echo $ddd` to access ddd variable
 - `echo ddd` prints exactly
 - `echo 'ddd'` even if it has variable inside, it comes out literally
 - 'echo "ddd"' middle ground ??
 
-## working with variables:
+### working with variables:
 - `a=3`
 - `e="hello dd"` no spaces (important)
 
-## adding attributes to variables (I,r,l,u)
+### adding attributes to variables (I,r,l,u)
 - `declare -i d=123` d is an integer
 - `declare -r e=456` e is read-only
 - `declare -l f="LolCats"` f is lolcats
 - `declare -u f = "dfd"` f is DFD
 
-## common variables:
+### common variables:
 - `echo $PWD` returns current directory
 - `echo $MACHTYPE` returns machine type
 - `echo $HOSTNAME` returns system name
@@ -32,16 +32,16 @@
 - `echo $SECONDS` returns the number of seconds the bash session has run
 - `echo $0` contains the name of the script
 
-## command substitution:
+### command substitution:
 - `d = $(pwd)` d would be string with present working directory
 - `echo $d`
 
-## arithmetic operations: `$(( expression ))`
+### arithmetic operations: `$(( expression ))`
 - `d=2`
 - `e = $((d+2))
 - echo $e
 
-## comparison operation: `[[ expression ]]`
+### comparison operation: `[[ expression ]]`
 - `[["cat" == "cat"]]`
 - `echo $?`
 - '[["cat" == "dog"]]'
@@ -49,28 +49,28 @@
 - '[[ 20 -gt 100 ]]'  lt gt le ge eq ne for integers
 - `echo $?`
 
-## string manipulation:
+### string manipulation:
 - `a="hello"`
 - `b="world"`
 - `echo $a$b`
 - `echo $(#a) #?`
 
-## date:
+### date:
 - `date + "%d-%m-%Y"`
 - `printf "Name:\t %s\nID:\t%04d\n" "Sxott" "12"`
 
-## working with arrays:
+### working with arrays:
 - `a=()`
 - `b=("apple" "banana" "cherry")`
 - `echo ${b[2]}`
 - `b[5] = "kiwi"`
 - `b[@] # get all elements`
 
-## Reading and writing file:
+### Reading and writing file:
 - `echo "some text" > file.txt`
 - `echo "some text" >> file.txt` apend to the file
 
-# bash functions:
+## bash functions:
 ```
 function greet {
              echo "Hi, $1"
@@ -78,7 +78,7 @@ function greet {
 greet pankaj 
 ```
 
-## working with arguments:
+### working with arguments:
 `echo $1`
 
 ``` 
@@ -89,7 +89,7 @@ done
 echo "There are $# arguments" 
 ```
 
-## getting input during execution
+### getting input during execution
 
 - `echo "what is your name?"`
 - `read name`
@@ -98,7 +98,7 @@ echo "There are $# arguments"
 - `read -p "What's your favorite animal?" animal`
 - `echo name: $name, pass $pass, animal: $animal`
 
-# ensuring a response:
+### ensuring a response:
 ``` 
 if [$# -lt 3 ]; then
         echo "Not enough arguments"
