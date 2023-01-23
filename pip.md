@@ -3,4 +3,4 @@
 `pip install -r requirements.txt`
 
 #### save to requirements.txt
-`pip freeze requirements.txt`
+`pip freeze > requirements.txt`

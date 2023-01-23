@@ -42,7 +42,7 @@
     -start's django's development server at default port 8080
 
 #### creating a new app
-= `django manage.py start-app [name-of-app]`
+- `django manage.py start-app [name-of-app]`
     - everytime you install an app, you need to add it to `INSTALLED_APPS` in `settings.py`
 
 ### migrations
@@ -68,6 +68,12 @@
         - !doesnot recopy once files are deleted  
     - `findstatic`
         - see where a file comes from
+
+### adding a superuser
+- `python manage.py createsuperuser`
+    - you'll be prompted to enter userame, email and password for a superuser
+    - use `http://localhost:8000/admin` in your web browser to access the admin page
+
 
 ##### notes:
 dont put static files on the `STATIC_ROOT` directory. Instead use `STATICFILES_DIRS`

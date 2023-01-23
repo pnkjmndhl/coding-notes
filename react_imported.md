@@ -1,86 +1,31 @@
-## React Notes
 
-### JSX
 
-- JSX adds XML syntax to JS
-- JSX tags have a tag name, attributes, and children (similar to XML)
-- Similar to JS, quotes in JSX attributes represent strings. Numeric values and/or expressions should be wrapped in a curly brace.
-
-- eg.
-```
-<div className =“red”>Children Text</div>;
-<myCounter count={3 + 5} />;
-var gameScores = {
-    player1  :   2,
-    player2  :   5
-};
-<DashboardUnit data-index=“2”>
-    <h1>Scores</h1>
-    <Scoreboard className=“results” scores={gameScores} />
-</DashboardUnit>;
-```
-- `<myCounter>` has an attribute called count that takes a numeric expression as its value
-- `gameScores` is an object literal that has two prop-value pairs
-- `<DashboardUnit>` is the block of XML that gets rendered on the page
-- `scores={gameScores}` : the scores attribute gets a value from the gameScores object that was defined earlier
-
-#### Since JSX is JavaScript, identifiers such as `class` and `for` are discouraged as XML attribute names.
-
-- use DOM property names like __className__ and __hmtlFor__ instead
-- Basic React structure  :
-```
-    let text = “lorem ipsum……”;
-    reactDOM.render(
-        <div>
-            <a href=“#” className=“button”>Button</a>
-        <div>{text}</div>
-        </div>,
-    document.getElementById(‘dom-node’)
-    );
-```
--  `text` is a variable that holds lorem ipsum text
--  `reactDOM.render( )` function is used to declare the block of code that is used to render a React component into the DOM
--  `{text}` to render an expression you always need the curly braces
-- `document.getElementById(‘dom-node’)` selects the DOM node that the component interacts with
-- the block of code above should render as an anchor tag (or button) with some text right below it
-
-- HTML tags vs. React Components  :
-
--  To render an  HTML tag use lower-case tag names (like usual)  eg.
-```
+#### HTML tags vs. React Components  :
+-  To render an HTML tag use lower-case tag names (like usual)  eg.
+```jsx
 const myDiv  =  <div className=“foo” />;
 ReactDOM.render( myDiv, document.getElementById(‘dom-node’) );
-     `          
+```          
 - a `<div>` is stored in a `const` called `myDiv` and then rendered using the `ReactDOM.render()` function
-
 - The function takes two args, the `<div>` stored in myDiv and `document.getElementById()` method which is used to select the node in the DOM tree that React interacts with               
 
 - To render a React Component you need to declare a local variable in [Pascal case](http://c2.com/cgi/wiki?PascalCase) E.g
-
-               const MyComponent  =  React.createClass( {/*….*/} );
-               const myElement        =  <MyComponent someProperty={true} />;
-               ReactDOM.render( myElement, document.getElementById(‘dom-node’) ) ;
-
+```jsx
+const MyComponent  =  React.createClass( {/*….*/} );
+const myElement        =  <MyComponent someProperty={true} />;
+ReactDOM.render( myElement, document.getElementById(‘dom-node’) ) ;
+```
 - The `React.createClass()` function is initiated as a value for `MyComponent` & this enables `MyComponent` to be recognized as a React component class.
-
 - After the React component has been created it is then passed as a value to a `const` called myElement. A property has also been defined and the value has been set to a boolean (`someProperty={true}`)
-
 - The `ReactDOM.render()` function then takes two args; the React component that was stored in `myElement` and `document.getElementById()` method which selects the specific DOM node that React interacts with
 
 ## Virtual DOM
-
 - React uses the [virtual DOM](http://tonyfreed.com/blog/what_is_virtual_dom) to clone a node that already exists in the DOM
-
 - Subtrees are created in the virtual DOM and then rendered based on state changes
-
 - When a state change occurs two things happen:
-
     - React runs a diff to check what changed
-
     - Then it updates the DOM based on the result of that diff (Referred to as [reconciliation](https://facebook.github.io/react/docs/reconciliation.html))
-
 - The Virtual DOM is considered the magic behind React. It batches DOM operations to keep everything quick and snappy because DOM manipulation is SLOW 
-
 - Once a state is changed it triggers the [diff algorithm](https://facebook.github.io/react/docs/reconciliation.html) to check all components, re-rendering only those that have changed properties. 
 
 ## Boilerplate Notes
