@@ -72,3 +72,5 @@ save a file with desired patterns as .gitigonre with either direct string matche
 - `/` do not look into subdirectories
 - `*.txt` all the files in all subdirectories
 - `directory/` ignore a directory
+
+### git local variables stored in .venv? test
