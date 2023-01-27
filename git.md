@@ -23,7 +23,8 @@
 - `git config -- global user.email "user@mail.com"`
 - `git config -- list`
 - `git config -- global color.ui auto`
-
+- use `git config -- local user.email "user@mail.com"` if you want to push with a different email 
+    - each virtual environment can store unique email address that can be used to push
 ### retrieving values
 - `git config user.email` retrieves the email address
 - `git config --global core.editor "\"c:\Program Files\Notepad++\notepad++.exe\"-wl1"`
@@ -72,5 +73,3 @@ save a file with desired patterns as .gitigonre with either direct string matche
 - `/` do not look into subdirectories
 - `*.txt` all the files in all subdirectories
 - `directory/` ignore a directory
-
-### git local variables stored in .venv? test
