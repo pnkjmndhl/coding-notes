@@ -220,7 +220,7 @@ for i in $@ #for array of arguments
 do
      echo $i
 done
-echo "There are $# arguments" 
+echo "There are $# arguments"
 ```
 
 ### getting input during execution
@@ -282,6 +282,8 @@ DISTRIB_CODENAME=xenial
 - `tar -cvf ../Bash mynewtar.tar`  compress, verbose to a file, Bash in parent directory
 - `tar -xf mynewtar.tar`  extract
 
+### extracting zip files
+- `unzip '*.zip'`  or `unzip \*.zip`
 ### Stdin, stdout, stderr, and output redirection
 ```
 standard input (stdin)	keyboard input	0

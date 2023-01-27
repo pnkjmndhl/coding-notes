@@ -1,3 +1,5 @@
+## keyboard shortcuts
+
 ### general
 
 - `Ctrl + Shift + P` `F1` show command palette
@@ -8,7 +10,7 @@
 
 ### basic editing
 
-- `Alt + ↑/↓` move line up/down
+- `Alt + ↑/↓` move the entire line up/down (useful)
 - `Shift + Alt + ↑/↓` copy line up/down
 - `Alt + ↑/↓` scroll line up/down
 - `Ctrl + Enter` insert line below
@@ -58,3 +60,43 @@
 ### integrated terminal
 - `` Ctrl + ` `` show integrated terminal
 - `` Ctrl + Shift + ` `` create new terminal
+
+### preview
+- `Ctrl + Shift + V` preview a markdown
+
+### navigation
+- `Alt + <-/->` switch tabs
+
+
+### others (notes)
+- right click:
+    - `goto definition`
+    - `find all references` to the function (only on the open files)
+    - `peek definition`
+    - `rename symbol`, changes all instances within scope for that variable
+    - `change all instances`, within the file
+    - `refactor`
+- format as you type:
+    - editor: format on type
+- format on save
+- formatting force aligned
+
+
+### create custom keybindings for common commands
+- if you have come from a different text editor (you can download the keymapping for that editor)
+
+### using emmet notation
+- HTML
+    - instead of using `<div>` and pressing `spacebar`, you can use `div` and press `tab`
+    - try `div>ul>li`, `div>ol*2>li*6`, img.
+    - try `"emmet.triggerExpansionOnTab": true`
+        - `.`-> class
+        - `#` -> id
+        - `$` -> wild card
+            - try `ul>li.example$*4>lorem`
+    - when multiple choices, even try fuzzy searches when figuring out what to type
+    
+### use git lens
+
+### use code snippets
+- open a new `.js` file and use `rafce`
