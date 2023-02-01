@@ -22,7 +22,7 @@
 - `python -m venv .venv`
 - `python -m pip install Django`
 #### create a django project
-- `django-admin startproject [name-of-project] .`
+- `django-admin startproject <name-of-project> .`
     - `manage.py` is a commandline administrative utility
     - a subfolder named `name-of-project` is created with following files
         - `__init.py__` is an empty file that tells python that this folder is a python package
@@ -35,14 +35,9 @@
             - all the searched urls (at front end) come here
             - from project's `url.py` the request is directed to app's `url.py`
         - `wsgy.py` is an entry for WSGI-compatible web serve to serve the project, leave as is, provides hooks for production web server
-- `python manage.py makemigrations [name-of-app]`
-    - create the migrations (generate the SQL commands)
-    - `python manage.py migrate` runs the migrations (executes SQL commands)
-- `python manage.py runserver`
-    -start's django's development server at default port 8080
 
-#### creating a new app
-- `django manage.py start-app [name-of-app]`
+#### creating a new app (components of an app)
+- `python manage.py startapp <name-of-app>`
     - everytime you install an app, you need to add it to `INSTALLED_APPS` in `settings.py`
 
 ### migrations
@@ -50,7 +45,21 @@
 - adding a new model, adding a new field, changing a field
 - first migration
     - creates tables for the models that are defined
-    - `python manage.py makemigrations`
+    - `python manage.py makemigrations [name-of-app]`
+      - creates a list of SQL commands
+    - `python manage.py migrate [name-of-app]`
+      - runs the migrations (executes the commands)
+
+### working with models
+- to register a newly created models in the admin page
+```py
+from .models import <model-name>
+admin.site.register(<model-name>)
+```
+
+### creating the server
+- `python manage.py runserver`
+    - start's django's development server at default port 8080
 
 ### adding static folder (make these changes)
 - `settings.py`
@@ -75,6 +84,11 @@
     - use `http://localhost:8000/admin` in your web browser to access the admin page
 
 
+### creating and updating models
+- a model is a table/fomat in your database
+- adding to a model
+  - `ModelName(parameter1= parameter1, parameter2=parameter2, ...).save()`
+
 ##### notes:
 dont put static files on the `STATIC_ROOT` directory. Instead use `STATICFILES_DIRS`
 
@@ -86,3 +100,36 @@ dont put static files on the `STATIC_ROOT` directory. Instead use `STATICFILES_D
     - available at an IP address or domain
     - runs on a remote server like a cloud server such as google cloud, heroku, digital ocean
     - intended for production for real users
+
+
+#### creating custom commands in Django
+- create these folders inside you app `[app-name]/management/<command-name.py>`
+- template for the `command-name.py` file
+```py
+from django.core.management.base import BaseCommand, CommandError
+class Command(BaseCommand):
+    help = "Command to print a text"
+    def handle(self, *args, **options):
+    try:
+        print('#Write your codes here#')
+    except Exception as e:
+        raise CommandError(e)
+```
+
+
+#### working with views
+- views are functions in `views.py` that can be run using url of the server
+- add the path to the `urls.py` file
+```py
+from django.urls import path
+from . import views
+urlpatterns = [
+    path('', views.[function-name], name = 'getdata'),
+]
+```
+- define `function-name` function to the `views.py` file
+```py
+from django.http import HttpResponse
+def getdata(request):
+    return HttpResponse("Hello World")
+```

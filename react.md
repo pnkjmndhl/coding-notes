@@ -207,3 +207,9 @@ var gameScores = {
         );
         }
         ```
+
+
+### redux (state management library)
+  - predicatable state container for JavaScript apps (React, Angular, Vue or vanilla JS)
+    - stores state of an application
+  

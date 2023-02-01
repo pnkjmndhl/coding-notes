@@ -24,7 +24,7 @@
 
 
 ### finding conda packages
-- `conda search [package-name]` search for a package	
+- `conda search <package-name>` search for a package	
 - `https://docs.anaconda.com/anaconda/packages/pkg-docs` see list of all packages in anaconda	
 
 
