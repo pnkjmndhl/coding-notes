@@ -1,4 +1,8 @@
 ## keyboard shortcuts
+- [keyboard shortcuts](#keyboard-shortcuts)
+  - [navigating tabs and windows](#navigating-tabs-and-windows)
+  - [general chrome functions](#general-chrome-functions)
+  - [miscellaneous](#miscellaneous)
 
 ### navigating tabs and windows
 - `Ctrl + N` open new window
@@ -26,4 +30,5 @@
 - `Ctrl + Enter` adds 'www.' & '.com'
 - `Ctrl + K` moves to address bar (google search)
 - `Alt + Click` download the target of a link
+- s
 
