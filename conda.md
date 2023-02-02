@@ -1,5 +1,10 @@
-### conda basics
 
+- [conda basics](#conda-basics)
+- [using environments](#using-environments)
+- [finding conda packages](#finding-conda-packages)
+- [updating and installing packages](#updating-and-installing-packages)
+
+### conda basics
 - `conda info` verify conda is installed, check version number	
 - `conda update conda` update conda to the current version	
 - `conda install PACKAGENAME` install a package included in anaconda	
