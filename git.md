@@ -1,6 +1,7 @@
-#### git is a free and open source distributed version control system that's responsible for everything GitHub related that happens locally on your computer.
+### introduction
+- git is a free and open source distributed version control system that's responsible for everything GitHub related that happens locally on your computer.
 
-### installation (happy)
+### installation
 `sudo apt-get install git-core`
 
 ## setting up
