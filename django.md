@@ -51,7 +51,7 @@
       - runs the migrations (executes the commands)
 
 ### working with models
-- to register a newly created models in the admin page
+- always register newly created models in `admin.py`
 ```py
 from .models import <model-name>
 admin.site.register(<model-name>)
@@ -111,25 +111,74 @@ class Command(BaseCommand):
     help = "Command to print a text"
     def handle(self, *args, **options):
     try:
-        print('#Write your codes here#')
+        # write your codes here
+        print("Hello World") 
     except Exception as e:
         raise CommandError(e)
 ```
-
+- running commands using `shell` (only works in linux terminal)
+- `python manage.py shell < path/to/script.py`
 
 #### working with views
 - views are functions in `views.py` that can be run using url of the server
 - add the path to the `urls.py` file
-```py
-from django.urls import path
-from . import views
-urlpatterns = [
-    path('', views.[function-name], name = 'getdata'),
-]
-```
+    ```py
+    from django.urls import path
+    from . import views
+    urlpatterns = [
+        path('', views.[function-name], name = 'getdata'),
+    ]
+    ```
 - define `function-name` function to the `views.py` file
-```py
-from django.http import HttpResponse
-def getdata(request):
-    return HttpResponse("Hello World")
-```
+    ```py
+    from django.http import HttpResponse
+    def getdata(request):
+        return HttpResponse("Hello World")
+    ```
+
+
+#### periodically running codes on the server using cron job
+- `python -m pip install django-crontab`
+- add `django_crontab` on `settings.py`
+    ```py
+    INSTALLED_APPS = [
+        ...,
+        'django_crontab',
+    ]
+    ```
+-  create `path/to/file/filename.py` file that you want to run periodically
+-  add the file to `settings.py`
+    ```py
+    CRONJOBS = [
+        ('*/2 * * * *', '<app-name>.cron.<function-name>')
+    ]
+    ```
+   - the syntax for the cron job
+        | field #|  meaning     |allowed values|
+        |----|------------------|------------|
+        | 1  |    minute        | 0-59      |
+        | 2  |      hour        |0-23        |  
+        | 3  |    day of month  |1-31           |
+        | 4  |   month          | 1-12 or simply names|
+        | 5  |  day of week     |  0-7 (0/7->Sun, or simply names)|
+   - multiple in same category could be separated by `,`
+   - `*/5` every that unit
+ - add/remove/show all defined `CRONJOBS` to `crontab`
+   - `python manage.py crontab add/remove/show`
+ - run django server
+
+
+#### periodically running codes on the server using celery and redis
+- `pip install celery redis`
+- configure celery
+  - add the following code to `settings.py` to configure celery to use redis as the message broker
+    ```py
+    import os
+    from celery import Celery
+
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'yourproject.settings')
+
+    app = Celery('yourproject')
+    app.config_from_object('django.conf:settings', namespace='CELERY')
+    app.autodiscover_tasks()
+    ```

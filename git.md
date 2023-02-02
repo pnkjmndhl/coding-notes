@@ -3,7 +3,7 @@
 ### installation
 `sudo apt-get install git-core`
 
-### setting up
+## setting up
 
 ### configuration (file locations)
 
@@ -22,15 +22,14 @@
 - `git config -- list`
 - `git config -- global color.ui auto`
 - use `git config -- local user.email "user@mail.com"` if you want to push with a different email 
-    - each virtual environment can store unique email address that can be used to push
+    - the project `.git` folder can store `--local user.email` that can be different to `--global`
 ### retrieving values
 - `git config user.email` retrieves the email address
-- `git config --global core.editor "\"c:\Program Files\Notepad++\notepad++.exe\"-wl1"`
+- `git config --global core.editor "code --wait"`
 - `git config --global color.ui true`
 
 ## setup and init
 - `git init` initializes an existing local git repository (hidden .git folder), config file is a project level configuration
-- `git clone <url-to-repo>`  retrieves an entire repository from a hosted location
 
 ## inspect and compare
 - `git log` or `git log --oneline` shows the commit history (or, in one line) for currently active branch

@@ -24,8 +24,8 @@ bash: Bourne Again Shell
 - `.`  current directory
 
 #### wild Cards:
-- `*` # any number of characters
-- `?` # one character
+- `*` any number of characters
+- `?` one character
 
 ## 2. File Folders Permissions
 
@@ -284,15 +284,24 @@ DISTRIB_CODENAME=xenial
 
 ### extracting zip files
 - `unzip '*.zip'`  or `unzip \*.zip`
-### Stdin, stdout, stderr, and output redirection
-```
-standard input (stdin)	keyboard input	0
-standard output (stdout)	Text on screen	1
-standard error (stderr)	Error text on screen	2
-```
+### stdin, stdout, stderr, and output redirection
+- 3 standard streams in unix-like systems 
 
-- `ls 1 > newfile.txt` prints the output of the ls command to a file
-- `ls 2 > newfile1.txt` prints the error to the file
+|streams |type |description|shortcut|
+|---|---|---|---|
+|`stdin`| standard input | receive input from keyboard	| 0 |
+|`stdout`| standard output | normal output, eg. text on screen	| 1 |
+|`stderr` | standard error | like `stdout` but for error messages | 2 |
+
+- eg.
+  - `ls <folder-name> > newfile.txt` prints the output of the ls command to a file
+  - `ls <folder-name> > newfile1.txt` prints the error to the file
 
 #### example: create a new file and add contents and append to an existing file
 `cat auth.log | grep "input_auth_request" | awk '{print $9}' | sort -u >>users.txt`
+
+
+### `.bashrc`
+- file located at `~` is a script that runs everytime a new terminal is opened
+- for windows
+  - `%UserProfile%\Documents\WindowsPowerShell\profile.ps1`
