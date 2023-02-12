@@ -100,3 +100,26 @@
 
 ### use code snippets
 - open a new `.js` file and use `rafce`
+
+### automating task to run on startup in VSCode
+- create a `tasks.json` file in `.vscode` folder
+  ```json
+    {
+    "version": "2.0.0",
+    "tasks": [
+        {
+        "label": "Load .venv",
+        "type": "shell",
+        "command": "load .venv",
+        "windows": {
+            "command": ".venv/Scripts/Activate.ps1"
+        },
+        "presentation": {
+            "reveal": "always",
+            "panel": "new"
+        },
+        "runOptions": { "runOn": "folderOpen" }
+        }
+      ]
+    }
+```

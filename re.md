@@ -51,7 +51,7 @@
 ### using regular expressions with python
 
 #### `re.findall(<expression>, <string>)` returns a list containing all matches.
-```
+```py
 txt = "The rain in Spain"
 x = re.findall("ai", txt)
 print(x)
@@ -60,7 +60,7 @@ prints a list the contains the matches in the order they are found.
 If no matches are found, an empty list is returned.
 
 #### `re.split(<expression>, <string>, [max-split])` returns a list where the string has been split at each match
-```
+```py
 txt = "The rain in Spain"
 x = re.split("\s", txt, 1)
 print(x)
@@ -68,14 +68,15 @@ print(x)
 splits at each white-space character
 
 #### `re.sub(<expression1>, <expression2>, <string>, [count])` replaces the matches with the text of your choice, returns a string. You can control the number of replacements by specifying the count parameter:
-```
+```py
 txt = "The rain in Spain"
 x = re.sub(r"\bS(\w+)", r"T\1", txt) # "The rain in Tpain"
 print(x)
 ```
-
+- if you don't want to replace the entire text, use separate paranthesis to extract that info
+  - `re.sub(r"([0-9]+)([a-z])", r"\1\\textsuperscript{\2}", "World Crude Oil Production, 1960-2021a")`
 #### `re.search(<expression>, <string>)` searches the string for a match, and returns a Match object if there is a match.
-```
+```py
 txt = "The rain in Spain"
 x = re.search("\s", txt)   
 print("The first white-space character is located in position:", x.start())
