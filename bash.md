@@ -48,8 +48,9 @@
     - [Using diff files to patch](#using-diff-files-to-patch)
   - [extracting tar files](#extracting-tar-files)
   - [extracting zip files](#extracting-zip-files)
-  - [Stdin, stdout, stderr, and output redirection](#stdin-stdout-stderr-and-output-redirection)
+  - [stdin, stdout, stderr, and output redirection](#stdin-stdout-stderr-and-output-redirection)
     - [example: create a new file and add contents and append to an existing file](#example-create-a-new-file-and-add-contents-and-append-to-an-existing-file)
+  - [`.bashrc`](#bashrc)
 
 bash: Bourne Again Shell
 
@@ -312,8 +313,8 @@ DISTRIB_CODENAME=xenial
 - `df -h`
 
 #### install and update software
-- `dnf` in Red Hat, CentOS, and fedora
-- `apt` Debian or ubuntu
+- `sudo dpkg -i <debfilename>`
+- 
 
 
 ## 7. Miscellaneous
