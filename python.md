@@ -9,3 +9,17 @@
   - `:.1%` percent with one decimal, results 3.4%
 
 
+### different file formats that you can save
+- if you cast the datatype in dataframe, you'll reduce the size
+- when you save as csv and read it back in, you loose information about the dtypes
+  - you can add the metadata again using dtypes in read_csv
+- when the dataset is very big
+- pickle
+  - use `df.to_pickle()`
+  - faster, smaller and metadata is not lost
+
+- parquet (faster and smaller)
+  - `pip install pyarrow`
+  - `pip install fastparquet`
+
+- feather (faster than parquet, but a little bit larger than parquet)

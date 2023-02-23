@@ -59,9 +59,9 @@
 - `git mv <existing-path> <new-path>` change an existing file path and stage the move
 
 ## temporary commits
-- `git stash` save modified and staged changes
-- `git stash list` list stack-order of stashed file changes
-- `git stash pop` write workign from top of stash stack`
+- `git stash list` list stack-order of stashed file changes (when you stash, the working directory is reverted to recent commit but  the changes are saved to stash)
+- `git stash` save modified and staged changes (use this when you are changing branches but you dont want to commit)
+- `git stash pop` or `git stash apply` or `git stash apply 'stash@{1}'` write working from top of stash stack`
 - `git stash drop` discard the changes from top of stash stack
 
 

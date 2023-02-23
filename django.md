@@ -182,3 +182,6 @@ class Command(BaseCommand):
     app.config_from_object('django.conf:settings', namespace='CELERY')
     app.autodiscover_tasks()
     ```
+
+
+### working with templates

@@ -66,6 +66,7 @@
 
 ### navigation
 - `Alt + <-/->` switch tabs
+- `Ctrl + Shift + E` switch focus to explorer
 
 
 ### others (notes)
