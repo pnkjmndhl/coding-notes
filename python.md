@@ -9,6 +9,22 @@
   - `:.1%` percent with one decimal, results 3.4%
 
 
+### `__init__.py`
+  - package types
+    - regular packages
+      - traditional packages (python 3.2 or earlier)
+      - a directory containing `__init__.py` file
+      - when a regular package is imported, `__init__.py` is implicitly executed, objects are bound to names in the package's namespace 
+
+```py
+if __name__ == "__main__":
+    print("Hello, World!")
+```
+- protects from accidentally invoking the script
+- when the main python code is executed from terminal, `__name__ = "__main__"`
+- but if its (foo.py) imported from another python file, `__name__ = "foo"`
+
+
 ### different file formats that you can save
 - if you cast the datatype in dataframe, you'll reduce the size
 - when you save as csv and read it back in, you loose information about the dtypes

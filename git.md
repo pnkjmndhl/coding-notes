@@ -63,6 +63,11 @@
 - `git stash` save modified and staged changes (use this when you are changing branches but you dont want to commit)
 - `git stash pop` or `git stash apply` or `git stash apply 'stash@{1}'` write working from top of stash stack`
 - `git stash drop` discard the changes from top of stash stack
+- `git stash show -p <n>` shows the contents of the `n`th stash
+   
+
+## squashing commits
+- writing `squash` before commits converts multiple local commits to one (before you push on repository)
 
 
 ## ignoring patterns (`.gitignore`)
