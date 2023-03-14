@@ -24,6 +24,20 @@ if __name__ == "__main__":
 - when the main python code is executed from terminal, `__name__ = "__main__"`
 - but if its (foo.py) imported from another python file, `__name__ = "foo"`
 
+### reading and writing files
+- reading and writing simulateneously:
+```py
+readFile = open('inputFile.txt', 'r')
+writeFile = open('writeFile.txt', 'w')
+for line in readFile:
+  # the `line` variable contains the string of each line in the txt file
+  line_split = line.split() # now the line_split contains list of words in the line
+  # for each look a line is stored in the line_split
+  # do things, for example
+  writeFile.write(line_split[1]) # writes the second word to the writeFile.txt
+readFile.close()
+writeFile.close()
+```
 
 ### different file formats that you can save
 - if you cast the datatype in dataframe, you'll reduce the size

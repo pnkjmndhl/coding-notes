@@ -147,7 +147,7 @@ if os.path.exists("uneven.vrt"):
     os.remove("uneven.vrt")
 
 f = open("uneven.vrt", "w")
-f.write() # !!! here you have to put the information that should be written to the VRT file. YouTube doesn't allow angled brackets in the description, so I can't put that here, but you can copy the necessary lines from the GDAL webpage: https://gdal.org/programs/gdal_grid.h...
+f.write()
 f.close()
 
 r = gdal.Rasterize("uneven.tif", "uneven.vrt", outputSRS = "EPSG:32719", 
