@@ -1,6 +1,7 @@
 ### Introduction
 - spark or apache spark
 - open-source distributed computing system
+- installed on top of operating system on cluster of machines
 - allows users to process large datasets in parallel across a cluster of computers
 - provides an interface for programming entire clusters with implicit data parallelism and fault tolerance
 - supports a variety of programming languages including java, scala, python, and R

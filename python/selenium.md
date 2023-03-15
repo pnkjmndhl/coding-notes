@@ -1,4 +1,4 @@
-### automating web browsing with selenium
+### Automating web browsing with selenium
 ```py
 from selenium import webdriver
 driver = webdriver.Chrome()
@@ -14,9 +14,11 @@ messageField.send_keys("Hello World")
 showMessageButton = driver.find_element_by_xpath(*xpath*)
 showMessageButton.click()
 ```
-- dragging and dropping (practice using dhtmlgoodies.com)
+- dragging and dropping (practice using [dhtmlgoodies](http://dhtmlgoodies.com))
+
 ```py
 from selenium.webdriver.common.action_chains import ActionChains
+
 source = driver.find_element_by_xpath(*xpath*)
 destination = driver.find_element_by_xpath(*xpath*)
 actions = ActionChains(driver)
@@ -33,3 +35,4 @@ from selenium.webdriver.support import expected_conditions as EC
 wait = WebDriverWait(driver, 10) # throws an exception after 10 seconds
 launchEarthButton = wait.until(EC.element_to_be_clickable((By.XPATH, *xpath*)))
 launchEarthButton.click()
+```

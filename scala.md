@@ -3,7 +3,7 @@
 - JVM language (same as java)
 - gives you functional styling
 - underrated and powerful
-- should know basics of Java before learning Scala
+- should know the basics of Java before learning Scala
 - can run scala on eclipse (similar to java)
 
 ### why?
