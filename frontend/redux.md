@@ -1,6 +1,6 @@
 ## Introduction
-- Redux is a state management library for js applications
-- provides a state container and a way to manage state in your application in a predictable and centralized way
+- Redux (or standard Redux) is a state management library for js applications
+- provides a state container and a way to manage the state in your application in a predictable and centralized way
 - open-source javascript library for managing and centralizing your application state
 - out-of-the-box features with best practices, good behaviors, catching mistakes and simpler code
 
@@ -10,7 +10,7 @@
 - provides built-in support for common use cases like creating **redux slices**
   - way to group related actions and reducers together
   - handling asynchronous actions with the `createAsyncThunk` API
-  - provides reconfigured store that includes middleware and other configuration options that are commonly used in redux application
+  - provides a re-configured store that includes middleware and other configuration options that are commonly used in redux application
 ### 3 main components
 - actions
   - sends data to the redux store

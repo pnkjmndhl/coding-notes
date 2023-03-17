@@ -14,34 +14,34 @@
     - runs in a web server and is responsible for processing, validating business roles and so on
 - client vs server
 - client (react, angular, vue)
-- server (django, express, flask) 
+- server (Django, express, flask) 
 
 
 ### setting up
 #### installing
 - `python -m venv .venv`
 - `python -m pip install Django`
-#### create a django project
+#### create a Django project
 - `django-admin startproject <name-of-project> .`
-    - `manage.py` is a commandline administrative utility
-    - a subfolder named `name-of-project` is created with following files
+    - `manage.py` is a command-line administrative utility
+    - a subfolder named `name-of-project` is created with the following files
         - `__init.py__` is an empty file that tells python that this folder is a python package
         - `asgi.py` is an entry point for ASGI-compatible web servers to serve the project, leave as is, provides hooks for production web servers
         - `settings.py` contains all settings for the project (modify as you work)
             - location of templates
             - which database to use
-            - dont change `__file__` to `'__file__'` (default is not wrong)
+            - don't change `__file__` to `'__file__'` (default is not wrong)
         - `urls.py` is a TOC for the project (modify as you work)
-            - all the searched urls (at front end) come here
-            - from project's `url.py` the request is directed to app's `url.py`
-        - `wsgy.py` is an entry for WSGI-compatible web serve to serve the project, leave as is, provides hooks for production web server
+            - all the searched urls (at the front end) come here
+            - from the project's `url.py` the request is directed to app's `url.py`
+        - `wsgy.py` is an entry for WSGI-compatible web serve to serve the project, leave as is, provides hooks for the production web server
 
 #### creating a new app (components of an app)
 - `python manage.py startapp <name-of-app>`
     - everytime you install an app, you need to add it to `INSTALLED_APPS` in `settings.py`
 
 ### Models
-- a data layer in the django app
+- a data layer in the Django app
 - define database structure
 - allow us to query from database
 - `models.py`
@@ -61,7 +61,7 @@ admin.site.register(<model-name>)
 
 
 ### migrations
-- generates scripts to change database structure
+- generates scripts to change the database structure
 - adding a new model, adding a new field, changing a field
 - first migration
     - creates tables for the models that are defined
@@ -77,8 +77,8 @@ admin.site.register(<model-name>)
 
 ### adding static folder (make these changes)
 - `settings.py`
-    - `STATIC_URL` is a URL where the user can access the static files from the brower. The default is `http://127.0.0.1:8000/static/`
-    - `STATIC_ROOT` is the absolute path to the directory where your django application will serve your static files from. When your run `collectstatic`, it will find static files from all apps and copy them to this directory
+    - `STATIC_URL` is a URL where the user can access the static files from the browser. The default is `http://127.0.0.1:8000/static/`
+    - `STATIC_ROOT` is the absolute path to the directory where your Django application will serve your static files from. When your run `collectstatic`, it will find static files from all apps and copy them to this directory
         ```py 
         STATIC_URL = 'static/' 
         STATIC_ROOT = os.path.join(BASE_DIR, 'static')
@@ -94,12 +94,12 @@ admin.site.register(<model-name>)
 
 ### adding a superuser
 - `python manage.py createsuperuser`
-    - you'll be prompted to enter userame, email and password for a superuser
+    - you'll be prompted to enter username, email and password for a superuser
     - use `http://localhost:8000/admin` in your web browser to access the admin page
 
 
 ### creating and updating models
-- a model is a table/fomat in your database
+- a model is a table/format in your database
 - adding to a model
   - `ModelName(parameter1= parameter1, parameter2=parameter2, ...).save()`
 

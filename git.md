@@ -1,7 +1,7 @@
-### introduction
+### Introduction
 - git is a free and open source distributed version control system that's responsible for everything GitHub related that happens locally on your computer.
 
-### installation
+### Installation
 `sudo apt-get install git-core`
 
 ## setting up
@@ -76,3 +76,11 @@
 - `/` do not look into subdirectories
 - `*.txt` all the files in all subdirectories
 - `directory/` ignore a directory
+
+
+### important terms
+- HEAD
+  - refers to the current state of your code (a pointer that points to the latest commit)
+  - when you make a new commit, HEAD moves to the new commit (indicating code is in a new state)
+  - is like a marker that tells Git which commit you're currently working on
+  - 

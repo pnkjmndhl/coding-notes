@@ -28,18 +28,5 @@ for i in urls:
     response = requests.get(newUrl)
 ```
 
-### automating web browsing with selenium
-- get the *xpath* using the selenium browser -> inspect element
-```py
-from selenium import webdriver
-driver = webdriver.Chrome()
-driver.get(Url)
-# entering values in a msg box
-messageField = driver.find_element_by_xpath(*xpath*) # use the xpath copied from the selenium browser
-messageField.send_keys("Hello World")
-# pressing a button
-showMessageButton = driver.find_element_by_xpath(*xpath*) # use the xpath copied from the selenium browser
-showMessageButton.click()
-```
-- dragging and dropping (practice using dhtmlgoodies.com)
-- 
+
+

@@ -38,7 +38,18 @@ for line in readFile:
 readFile.close()
 writeFile.close()
 ```
+### executing terminal commainds
+```py
+import subprocess
+subprocess.check_call("python3", "example.py")
+```
 
+### useful commands for working with files
+- `item = os.scandir()`
+- `item.is_dir()` checks if the item is a directory
+- `filePath = Path(item)` gets the path of the file
+- `fileType = filePath.suffix.lower()` gets the filetype of the file
+- 
 ### different file formats that you can save
 - if you cast the datatype in dataframe, you'll reduce the size
 - when you save as csv and read it back in, you loose information about the dtypes
