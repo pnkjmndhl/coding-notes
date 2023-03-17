@@ -34,9 +34,16 @@
 - [Excel](excel.md)
 
 
-### web servers
+### web development
+- [HTML](html.md)
+- [javascript](javascript.md)
+- [css](css.md)
+- [ES6](es6.md)
 - [Django](django.md)
+- [redux](redux.md)
+- [react](react.md)
 
 
 ### data visualization
 - [plotly](plotly.md)
+- [w3.js](w3js.md)

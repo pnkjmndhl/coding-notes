@@ -40,6 +40,26 @@
 - `python manage.py startapp <name-of-app>`
     - everytime you install an app, you need to add it to `INSTALLED_APPS` in `settings.py`
 
+### Models
+- a data layer in the django app
+- define database structure
+- allow us to query from database
+- `models.py`
+- models comparing to spreadsheet
+  - models = table
+  - field = columns
+  - record = rows
+- always register newly created models in `admin.py`
+```py
+from .models import <model-name>
+admin.site.register(<model-name>)
+```
+
+
+
+
+
+
 ### migrations
 - generates scripts to change database structure
 - adding a new model, adding a new field, changing a field
@@ -50,12 +70,6 @@
     - `python manage.py migrate [name-of-app]`
       - runs the migrations (executes the commands)
 
-### working with models
-- always register newly created models in `admin.py`
-```py
-from .models import <model-name>
-admin.site.register(<model-name>)
-```
 
 ### creating the server
 - `python manage.py runserver`
@@ -89,7 +103,8 @@ admin.site.register(<model-name>)
 - adding to a model
   - `ModelName(parameter1= parameter1, parameter2=parameter2, ...).save()`
 
-##### notes:
+
+#### notes:
 dont put static files on the `STATIC_ROOT` directory. Instead use `STATICFILES_DIRS`
 
 #### difference between webserver and development server

@@ -1,5 +1,5 @@
 #### notes
-(the "r" in the beginning is making sure that the string is being treated as a "raw string")
+(the "r" in the beginning is making sure that the string is being treated as a "raw string", no escaping, treat `\` as literal character not escape character"
 
 #### metacharacters (characters with special meaning)
 

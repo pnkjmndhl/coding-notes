@@ -1,33 +1,39 @@
-## intro
-#### installing gdal using conda
+#### installing gdal using conda (recommended)
 `conda install -c conda-forge gdal`
 #### installing gdal using .whl file
 `python -m pip install path-to-wheel-file.whl`
 
-## read and write raster files
+### read/write and simple operations raster files
+```py
+ds = gdal.Open("<filename>")
+```
 
-````py
-from osgeo import gdal
-import numpy as np
-import matplotlib.pyplot as plt
+#### get projection and transformation
+```py
+ds.GetProjection()
+ds.GetGeoTransform()
+```
 
-# import 
-ds = gdal.Open("dem.tif")
-gt = ds.GetGeoTransform()
-proj = ds.GetProjection()
-
+#### get band values as arrays
+```py
 band = ds.GetRasterBand(1)
 array = band.ReadAsArray()
+```
 
+#### use array values to plot
+```py
 plt.figure()
 plt.imshow(array)
+```
 
-# manipulate
+#### manipulate (mask)
+```py
 binmask = np.where((array >= np.mean(array)),1,0)
-plt.figure()
 plt.imshow(binmask)
+```
 
-# export
+#### export (example)
+```py
 driver = gdal.GverByName("GTiff")
 driver.Register()
 outds = driver.Create("binmask.tif", xsize = binmask.shape[1],
@@ -39,11 +45,37 @@ outband = outds.GetRasterBand(1)
 outband.WriteArray(binmask)
 outband.SetNoDataValue(np.nan)
 outband.FlushCache()
+```
 
-# close your datasets and bands!!!
+#### close datasets and bands
+```py
 outband = None
 outds = None
 ````
+
+#### convert raster data between different formats
+- `gdal.translate(<src_dataset>, <dst_dataset>)` if no arguments are given, format readable by pandas is created
+
+
+
+
+#### rasterize (convert vector to rasters)
+- `gdal_rasterize -ts 100 100 -a_nodata -9999 -burn 1 face.shp face.tif`
+
+#### you can create a new one or overlap
+
+#### polygonize
+- `gdal_polygonize.py <raster_filename> <vector_filename>` 
+
+
+## processing vector data with gdal (ogr is now part of gdal)
+- `ogrinfo -so <name_of_shp>`
+- `ogr2ogr -of KML <output_name> <input_name>` convert shp to kml
+- `ogr2ogr -where "FID>3" <output_name> <input_name>` convert shp to shp with filters
+- `ogr2ogr -t_srs epsg:32422 shp2UTM.shp output.shp`
+- `ogr2ogr merged.shp shp1.shp`
+- `ogr2ogr -append -update merged.shp shp2UTM.shp -nln merged`
+- `ogr2ogr -sql "SELECT OGR_GEOM_AREA AS area FROM merged" area.shp merge.shp`
 
 ### convert between csv and GeoTIFF with GDAL in Python
 ```py
@@ -57,7 +89,7 @@ ds = gdal.Open("dem.tif")
 
 # TIFF to CSV 
 # first option
-xyz = gdal.Translate("dem.xyz", ds) #creates the file
+xyz = gdal.Translate("dem.xyz", ds) #copies the file
 xyz = None
 
 df = pd.read_csv("dem.xyz", sep = " ", header = None)
@@ -73,12 +105,12 @@ xmin = gt[0]
 ymax = gt[3]
 xsize = ds.RasterXSize
 ysize = ds.RasterYSize
-xstart = xmin +res/2
+xstart = xmin + res/2
 ystart = ymax - res/2
 ds = None
 
-x = np.arange(xstart, xstart+xsize*res, res)
-y = np.arange(ystart, ystart-ysize*res, -res)
+x = np.arange(xstart, xstart + xsize * res,  res)
+y = np.arange(ystart, ystart - ysize * res, -res)
 x = np.tile(x, ysize)
 y = np.repeat(y, xsize)
 
@@ -115,7 +147,7 @@ if os.path.exists("uneven.vrt"):
     os.remove("uneven.vrt")
 
 f = open("uneven.vrt", "w")
-f.write() # !!! here you have to put the information that should be written to the VRT file. YouTube doesn't allow angled brackets in the description, so I can't put that here, but you can copy the necessary lines from the GDAL webpage: https://gdal.org/programs/gdal_grid.h...
+f.write()
 f.close()
 
 r = gdal.Rasterize("uneven.tif", "uneven.vrt", outputSRS = "EPSG:32719", 
@@ -125,25 +157,3 @@ r = None
 g = gdal.Grid("unevenInt.tif", "uneven.vrt", outputSRS = "EPSG:32719")
 g = None
 ```
-
-### rasterize
-rasterize (convert vectors to rasters)
-- `gdal_rasterize -ts 100 100 -a_nodata -9999 -burn 1 face.shp face.tif`
-
-#### you can create a new one or overlap
-
-### polygonize
-- `gdal_polygonize.py <raster_filename> <vector_filename>` 
-
-
-## processing vector data with gdal
-ogr is now part of gdal
-
-- `ogrinfo -so <name_of_shp>`
-- `ogr2ogr -of KML <output_name> <input_name>` convert shp to kml
-- `ogr2ogr -where "FID>3" <output_name> <input_name>` convert shp to shp with filters
-
-- `ogr2ogr -t_srs epsg:32422 shp2UTM.shp output.shp`
-- `ogr2ogr merged.shp shp1.shp`
-- `ogr2ogr -append -update merged.shp shp2UTM.shp -nln merged`
-- `ogr2ogr -sql "SELECT OGR_GEOM_AREA AS area FROM merged" area.shp merge.shp`

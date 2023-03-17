@@ -7,4 +7,4 @@
 ### maths
 - start and end with $
 - symbols table
-  ~ -> $\sim$
+- ~ -> $\sim$

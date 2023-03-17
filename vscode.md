@@ -47,7 +47,7 @@
 - `Ctrl + Tab` open next
 - `Ctrl + Shift + Tab` open previous
 
-### display
+### display/navigate
 - `Ctrl + B` toggle sidebar visibility
 - `Ctrl + Shift + E` show explorer/toggle focus
 - `Ctrl + Shift + F` show search
@@ -66,7 +66,6 @@
 
 ### navigation
 - `Alt + <-/->` switch tabs
-- `Ctrl + Shift + E` switch focus to explorer
 
 
 ### others (notes)
