@@ -30,5 +30,6 @@
 - `Ctrl + Enter` adds 'www.' & '.com'
 - `Ctrl + K` moves to address bar (google search)
 - `Alt + Click` download the target of a link
-- s
 
+
+[Debugging Javascript in Chrome](javascript.md#debugging-javascript-in-chrome)
