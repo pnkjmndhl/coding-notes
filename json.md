@@ -1,27 +1,17 @@
-#### example
-```js
-{
-	"first_name": "John",
-	"last_name" : "Doe",
-	"memberships": ["mem1, mem2"],
-	"address": {
-			"street": "4 main st",
-			"city": "Boston"
-			},
-	"contacts":[
-			{"name": "Brad", "relationship": "friend"}
-		]
-}
-```
-
-##### the above json string define 3 properties- name, age, and car
-
-#### JSON and JavaScript
+### Introduction
+- a JSON can be either a string or parsed
 - syntactically similar to code for creating JavaScript objects
-- JavaScript has a builtin function for converting an object into a JSON string, `JSON.parse()`, and back `JSON.stringify()`
+- JavaScript has a built-in function for converting an object into a JSON string
+  -  `JSON.parse()` converts a string to a JSON object
+  -  `JSON.stringify()` converts JSON object to a string
 - JSON: `{"name":"John"}`, JavaScript: `{name:"John"}`
+- APIs return in JSONs (usually)
 - JSON values must be string, number, object, array, boolean, or null
-- JavaScript, JSON + function, date, or undefined
-- accessing values: JavaScript `person["name"]`, or `person.name`
-- modifying values: JavaScript `person.name = "Gilbert";`, or, `person["name"] = "Gilbert";`
+- JavaScript: JSON + function, date, or undefined
+- accessing values in JS:
+  - `person["name"]`
+  - `person.name`
+- modifying values in JS
+  - `person.name = "Gilbert";`
+  - `person["name"] = "Gilbert";`
 - JSON is easier and faster than XML
