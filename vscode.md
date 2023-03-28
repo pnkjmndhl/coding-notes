@@ -95,7 +95,7 @@
         - `$` -> wild card
             - try `ul>li.example$*4>lorem`
     - when multiple choices, even try fuzzy searches when figuring out what to type
-    
+- in your code, just make sure in the lower right corner that its actually the code you are writing, for example, `javascript.react` for react apps
 ### use git lens
 
 ### use code snippets
