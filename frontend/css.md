@@ -1,4 +1,4 @@
-syntax:
+#### syntax:
 ```css
 selector {
     property1: value;
@@ -16,5 +16,10 @@ h1 {
 #### Class Selector
 - selects html attributes based on the class attributes
 - elements can have multiple classes separated by space
-```
 
+
+#### notes
+- `#` -> id
+- `.` -> class
+- ` ` -> tag
+- 

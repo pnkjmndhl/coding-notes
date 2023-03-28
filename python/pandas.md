@@ -13,6 +13,9 @@
      
 
 ### pivot_table
+- `pd.pivot_table(data, values= None , index= None, columns= None,  aggfunc='mean')`
+  - `values` -> the list of the columns that you want to perform `aggfunc`  (optional)
+  -  `index` -> columns that would be used in the pivottable index
+  -  `columns` -> columns that would be used in the pivottable columns
 
-pd.pivot_table(dataframe, values= , columns= , )
 

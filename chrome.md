@@ -32,4 +32,4 @@
 - `Alt + Click` download the target of a link
 
 
-[Debugging Javascript in Chrome](javascript.md#debugging-javascript-in-chrome)
+[Debugging Javascript in Chrome](./frontend/javascript.md#debugging-JS-in-chrome)

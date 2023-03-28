@@ -1,23 +1,20 @@
-
-#### for
-- you dont want to use this
-```js
-for (let i=0; i< arry.length; i++) {
-  console.log(arry[i])l
-}
-```
-
-### Higher Order functions and Arrays
-
-#### sample dataset
+### Ternary (conditional) operator
+- `condition ? exprIfTrue : exprIfFalse`
+- `condition && exprIfTrue`
+### sample dataset
 ```js
 const arry = [{name: "apple", color: "red", size = 20},{},{}, ...]
 const arr = [23,4,234,43,356,7456,8,78]
 ```
-
+#### for
+- you dont want to use this
+  ```js
+  for (let i=0; i< arry.length; i++) {
+    console.log(arry[i])
+  }
+  ```
 #### forEach
 ```js
-
 arry.forEach(function(x, index, arry) {
   console.log(x)
 });
@@ -25,7 +22,6 @@ arry.forEach(function(x, index, arry) {
 
 #### filter
 ```js
-
 const filteredArry = arr.filter(var => (var >= 23)); 
 // if arr is a array of dictionaries, you can check condition to any key in the dictionary, use var.key
 // you can also put multiple conditions and create conditional statements to multiple keys
@@ -83,9 +79,7 @@ const sizeSum = arry.reduce ((total, size) => total + size, 0) // second paramet
 #### post request
 
 
-### Ternary (conditional) operator
-- `condition ? exprIfTrue : exprIfFalse`
-- `condition && exprIfTrue`
+
 
 
 ## Debugging JS in chrome
