@@ -12,11 +12,34 @@
 `python -m pip install pipenv`
 
 
-#### activating
-- `python -m pipenv shell`
-    - this creates a pip file
+#### `python -m pipenv shell`
+  - activating when no pipfile is present
+  - this creates a new pip file
 
 
-#### installing multiple packages
-- `pipenv install django djangorestframework django-rest-knox`
-  - adds to the `pipfile` file
+#### `pipenv install <packagename1> <packagename2> <packagename3>`
+  - installs multiple packages
+  - adds to pipfile
+
+#### `pipenv lock -r`
+  - see what's installed in the pipenv package
+
+#### `pipenv uninstall <packagename1> <packagename2> <packagename3>`
+  - uninstalls a package
+
+
+### `pipenv install -r ./requirements.txt`
+  - installs from requrements.txt
+
+
+### `pipenv check` 
+  - checks vulnerabilities, if you find any, edit the piplock file and rerun `pipenv install`
+
+
+### `exit`
+  - exit from a pipenv
+
+
+### `pipenv run python`
+  - runs the python from the virtual environment
+  - see the location using `sys.executable`
