@@ -22,7 +22,7 @@
 - `python -m venv .venv`
 - `python -m pip install Django`
 #### create a Django project
-- `django-admin startproject <name-of-project> .`
+- `django-admin startproject <name-of-project>`
     - `manage.py` is a command-line administrative utility
     - a subfolder named `name-of-project` is created with the following files
         - `__init.py__` is an empty file that tells python that this folder is a python package
@@ -36,29 +36,25 @@
             - from the project's `url.py` the request is directed to app's `url.py`
         - `wsgy.py` is an entry for WSGI-compatible web serve to serve the project, leave as is, provides hooks for the production web server
 
-#### creating a new app (components of an app)
+#### creating a new app (different components of a project)
 - `python manage.py startapp <name-of-app>`
-    - everytime you install an app, you need to add it to `INSTALLED_APPS` in `settings.py`
+    - everytime you install an app, you need to add it's name to `INSTALLED_APPS` in `settings.py`
 
 ### Models
 - a data layer in the Django app
-- define database structure
+- define database structure in class form
 - allow us to query from database
 - `models.py`
 - models comparing to spreadsheet
-  - models = table
+  - **models = table**
   - field = columns
   - record = rows
-- always register newly created models in `admin.py`
+- you need to migrate a model before using it
+- if you want to view the table on the admin website, register created models in `admin.py`
 ```py
 from .models import <model-name>
 admin.site.register(<model-name>)
 ```
-
-
-
-
-
 
 ### migrations
 - generates scripts to change the database structure
@@ -69,6 +65,38 @@ admin.site.register(<model-name>)
       - creates a list of SQL commands
     - `python manage.py migrate [name-of-app]`
       - runs the migrations (executes the commands)
+
+
+## Using the REST framework
+
+### serializers
+- allows complex data such as querysets and model instances to be converted to native python datatypes that can then be easily rendered to JSON, XML or other types
+- create serializers.py and add the following code
+```py
+from rest_framework import serializers
+from leads.models import Lead
+
+# Lead serializer
+class LeadSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Lead
+        fields = "__all__"
+```
+
+### viewsets
+- a way to organize related views in a single class
+- can handle various HTTP methods (GET, PUT, DELETE, etc) for a particular model or resource
+- reduces the amount of boilerplate code
+- create urls.py in the app and
+```py
+from rest_framework import routers
+from .api import LeadViewSet
+
+router = routers.DefaultRouter()
+router.register("api/leads", LeadViewSet, 'leads')
+
+urlpatterns = router.urls
+```
 
 
 ### creating the server

@@ -13,5 +13,4 @@
 - `=TEXT(cell, "formatting")`
 
 ### number formattings
-
  - `#0.#0,,` in millions (eg. 3000,000 -> 0.30)

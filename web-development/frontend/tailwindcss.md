@@ -1,3 +1,6 @@
+### Links
+- practice using this [link](https://raybo.org/slides_tailwind/#/)
+
 ### setting up
 - `npm init -y`
 - `npm install -D @tailwindcss/jit tailwindcss postcss`
@@ -14,7 +17,7 @@
 - in the `tailwind.config.js`
 - you need to restart the server
 - example of changing breakpoints
-```
+```css
 module.exports = {
     theme: {
         extend: {
@@ -35,7 +38,7 @@ module.exports = {
     @tailwind utilities;
     ```
   - inside part1
-    ```
+    ```css
     @layer base {
         h1 {
             color: salmon;
@@ -44,7 +47,7 @@ module.exports = {
     }
     ```
   - inside part2
-    ```
+    ```css
     @layer components {
         .btn {
             @apply 
@@ -149,9 +152,83 @@ module.exports = {
     - Overscroll `overscroll(-DIR)(-TYP)` `DIR`: `x` `y` `TYP`: `auto` `contain` `none`
 
 ### Layout
-- flexbox `flex(-TYP)(-DIR)` `TYP`: `row` `col` `DIR` `reverse` 
+- Flexbox `flex(-TYP)(-DIR)` `TYP`: `row` `col` `DIR`: `reverse` 
   - flexwrap `flex-wrap` `flex-wrap-reverse` `flex-nowrap`
   - flex `flex-1` `flex-auto` `flex-initial` `flex-none`
   - flex grow `flex-grow-0` `flex-grow`
   - flex shrink `flex-shrink-0` `flex-shrink`
   - Order `order(-ORD)` `ORD` `1-12` `first` `last` `none`
+- Grids
+  - Grid Template Columns
+    - `grid-cols-(-AMT)` `AMT`: `1-12` `none`
+    - `col(-TYP)(-AMT)` `TYP`: `auto` `span` `start` `end` `AMT`: `1-12` `full`
+  - Grid Template Rows
+    - `grid-rows(-AMT)` `AMT`: `1-6` `none`
+  - Grid Row Start/End
+    - `col(-TYP)(-AMT)` `TYP` `auto` `span` `start` `end`
+  - Grid Auto columns
+    - `auto-cols-auto` `auto-cols-min` `auto-cols-max` `auto-cols-fr`
+- Box Alignment
+  - space between `space(-DIR)(-AMT)` `DIR` `x` `y` `AMT`: `0~96` `px` `reverse`
+  - justify content `justify(-DIR)` `DIR`: `start` `end` `center` `between` `around` `evenly`
+  - justify items `justify-items(-DIR)` `DIR`: `auto` `start` `end` `center` `stretch`
+  - justify self `justify-self(-DIR)` `auto` `start` `end` `center` `stretch`
+  - align items `items(-DIR)` `DIR`: `center` `start` `end` `baseline` `stretch`
+  - align self `items(-DIR)` `DIR`: `center` `start` `end` `baseline` `stretch`
+  - place content `place-content(-DIR)` `DIR`: `center` `start` `end` `between` `around` `evenly` `stretch`
+  - place items `place-items(-DIR)` `DIR`: `auto` `start` `end` `center` `stretch`
+  - place self `place-self(-DIR)` `DIR`: `auto` `start` `end` `center` `stretch`
+
+
+
+### Animation
+- Transformations
+  - Transform `transform` `transform-gpu` `transform-none`
+  - Rotate `(-)rotate(-DEG)` `AMT`: `0~180`
+  - Scale `scale(-DIR)(-SIZ)` `DIR`: `x` `y` `SIZ`: `0~150`
+  - Skew `(-)skew(-DIR)(-DEG)` `DIR`: `x` `y` `DEG`: `0` `1` `2` `3` `6` `12`
+  - translate `(-)translate(-DIR)(-AMT)` `DIR`: `x` `y` `AMT`: `0~96` `px` `full`
+  - transform origin `origin(-DIR)` `DIR`: `center` `top` `top-right` `right` `bottom-right` `bottom` `bottom-left` `left` `top-left`
+- Transitions
+  - `transition(-TYP)` `TYP`: `none` `all` `colors` `opacity` `shadow` `transform`
+  - Transition Duration `duration(-TYP)` `AMT` `75` `100` `150` `200` `300` `500` `700` `1000`
+  - Transition Delay `delay(-TYP)`
+  - Transition Timing function `ease(-TYP)` `TYP`: `linear` `in` `out` `in-out`
+- Animation
+  - `animate(-TYP)` `TYP`: `none` `spin` `ping` `pulse` `bounce`
+- Filter utilities
+  - .....
+- Blending mode utilities
+  - how different layers are blended
+  - isolation
+
+
+### Other options
+- Forms
+  - Placeholder colors
+  - Placeholder opacity
+- Tables
+  - Table Layout `table-auto` `table-fixed`
+  - Border Collapse `border-collapse` `border-separate`
+- SVG
+  - Stroke `stroke-current`
+  - Fill `fill-current`
+- Screen readers `sr-only` `not-sr-only`
+- Interactive
+  - User select `select-TYP` `TYP`:`auto` `all` `none`
+  - Cursors `cursor-TYP` `TYP`: `auto` `default` `pointer` `wait` `text` `move` `not-allowed`
+
+
+## Just in time Mode
+- allows you generate CSS on-demand, rather than creating a huge CSS file upfront that contains all possible combinations of classes
+- so CSS is generated on the fly
+- advantages
+  - small files
+  - arbitrary values
+    - eg. `bg-[#f5e6c0]` `w-[150px]`
+  - variants enabled/stackable
+    - before/after variants
+    - first letter/line `first-letter:` `first-line:`
+    - selection variant `selection:`
+    - empty variant
+    - pseudo classes only `first-of-type` `last-of-type` `only-of-type` `target` `default` `intermediate` ...
