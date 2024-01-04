@@ -1,3 +1,9 @@
+## Setup
+- install vscode
+- add vscode.exe to environment variables
+
+
+
 ## keyboard shortcuts
 
 ### general
@@ -122,4 +128,14 @@
         }
       ]
     }
-```
+    ```
+
+
+### debugging python code in VSCode
+- use the debug tab
+- when you click the play button, runs the current file from terminal
+- add breakpoints, see local and global variables
+
+
+### debugging web-development code in VSCode
+- 

@@ -48,3 +48,7 @@ echo myfile.txt does not exist
 
 #### killing tasks with `im` and `force`
 `taskkill /im iexplore.exe /f`
+
+
+#### Stop creating the __pycache__ folder:
+`set PYTHONDONTWRITEBYTECODE=1`

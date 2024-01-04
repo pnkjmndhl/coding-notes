@@ -1,4 +1,4 @@
-#### notes
+#### Regular Expression
 (the "r" in the beginning is making sure that the string is being treated as a "raw string", no escaping, treat `\` as literal character not escape character"
 
 #### metacharacters (characters with special meaning)
@@ -86,4 +86,4 @@ print("The first white-space character is located in position:", x.start())
 
 - `.span()` returns a tuple containing the start, and end positions of the match.
 - `.string` returns the original `<string>` passed into the function.
-- `.group()` returns the list of all matches
+- `.groups()` returns the list of all matches

@@ -5,7 +5,8 @@
 - `git push -u origin main`
 
 #### using existing repo
-- `git clone <url-to-repo>`  retrieves an entire repository from a hosted location
+- `git clone <url-to-repo>`  retrieves the repository from `<url-to-repo>`
+- `git clone --branch <branch> <url-to-repo>` retrieves the `<branch>` from `<url-to-repo>` 
 ### share and update
 - `git clone <url>` retrieve an entire reposotory from github
 - `git remote add <alias> <url>` add a git URL as an alias, [alias] is the name of the remote repository `url` that is human readable and used in subsequent pushes

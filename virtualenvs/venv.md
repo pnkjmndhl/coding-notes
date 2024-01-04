@@ -8,3 +8,7 @@
 -`source .venv/bin/activate`
 - `.venv` -> directory name in the current folder where the virtual environment would be created
 
+### get out of a venv
+```
+deactivate
+```

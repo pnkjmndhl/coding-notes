@@ -40,6 +40,7 @@
 ## stage and snapshot
 - `git status` show modified files in working directory, staged for your next commit
 - `git add <file-name>` or `git add .` add file/s as it looks now locally to your next commit (stage)
+  - `git add -u` to skip the untracted files
 - `git reset` to move the HEAD to any previous commit, discarding any changes after that commit, keeping working directory unchanged
     - `git reset` <img src = "https://wac-cdn.atlassian.com/dam/jcr:e8a43261-2460-4783-9731-1197dc8959ab/03-04%20Reset%20a%20specific%20commit.png?cdnVersion=747" width =600 height=800 />
 - `git reset HEAD <file-name>` remove files from the staging area such that its the previous commit

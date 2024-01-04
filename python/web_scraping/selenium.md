@@ -8,10 +8,10 @@ driver.get(Url)
 - entering values and clicking a button
 ```py
 # entering values in a msg box
-messageField = driver.find_element_by_xpath(*xpath*) # use the xpath copied from the selenium browser
+messageField = driver.find_element("xpath", *xpath*) # use the xpath copied from the selenium browser
 messageField.send_keys("Hello World")
 # clicking a button
-showMessageButton = driver.find_element_by_xpath(*xpath*)
+showMessageButton = driver.find_element("xpath", *xpath*)
 showMessageButton.click()
 ```
 - dragging and dropping (practice using [dhtmlgoodies](http://dhtmlgoodies.com))
@@ -19,8 +19,8 @@ showMessageButton.click()
 ```py
 from selenium.webdriver.common.action_chains import ActionChains
 
-source = driver.find_element_by_xpath(*xpath*)
-destination = driver.find_element_by_xpath(*xpath*)
+source = driver.find_element("xpath", *xpath*)
+destination = driver.find_element("xpath", *xpath*)
 actions = ActionChains(driver)
 actions.drag_and_drop(source,destination).perform()
 ```
@@ -29,7 +29,7 @@ actions.drag_and_drop(source,destination).perform()
 - explicit and implicit wait
 ```py
 from selenium.webdriver.common.by import By
-from selenium.webdriver.suppoert.ui import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 wait = WebDriverWait(driver, 10) # throws an exception after 10 seconds

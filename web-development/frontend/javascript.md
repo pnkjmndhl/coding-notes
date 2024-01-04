@@ -42,6 +42,12 @@ const sortedArray = arry.sort( (a,b) => (a.size > b.size ? 1 : -1))
 const sizeSum = arry.reduce ((total, size) => total + size, 0) // second parameter 0, is the initial value of total
 ```
 
+{
+  "surveyId": "2017",
+  "tablename": "variable",
+  "dataset": "Vehicle"
+}
+
 
 ### Fetch
 
@@ -50,9 +56,10 @@ const sizeSum = arry.reduce ((total, size) => total + size, 0) // second paramet
 - `fetch('fetch-url').then(res => console.log(res))` prints the content, but the data is not accessible
 - 
   ```js
-  fetch('fetch-url')
-  .then(res => res.json())
-  .then(data=> console.log(data))
+  // example of a fetch :)
+  fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(response => response.json())
+        .then(json => console.log(json))
   ``` 
   prints the data
 - if you want to catch errors

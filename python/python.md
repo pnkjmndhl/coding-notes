@@ -64,3 +64,13 @@ subprocess.check_call("python3", "example.py")
   - `pip install fastparquet`
 
 - feather (faster than parquet, but a little bit larger than parquet)
+
+
+### using `with`
+- for cleaner implimentation for reading and writing files
+- for resource management and handling
+- prevents resources leak
+```
+with open("myfile.txt", "w") as f:
+    f.write("Hello, world!")
+  ```

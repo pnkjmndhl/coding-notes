@@ -34,6 +34,7 @@
         - `urls.py` is a TOC for the project (modify as you work)
             - all the searched urls (at the front end) come here
             - from the project's `url.py` the request is directed to app's `url.py`
+            - the `urls.py` then directs to `views.py`
         - `wsgy.py` is an entry for WSGI-compatible web serve to serve the project, leave as is, provides hooks for the production web server
 
 #### creating a new app (different components of a project)
@@ -69,9 +70,10 @@ admin.site.register(<model-name>)
 
 ## Using the REST framework
 
-### serializers
-- allows complex data such as querysets and model instances to be converted to native python datatypes that can then be easily rendered to JSON, XML or other types
-- create serializers.py and add the following code
+### serializers (like a function, that changes something into something else (usable))
+- allows complex data such as querysets and model instances to be converted to native Python datatypes that can then be easily rendered to JSON, XML or other types
+- deserializers convert them back to data
+- create `serializers.py` and add the following code:
 ```py
 from rest_framework import serializers
 from leads.models import Lead
@@ -228,3 +230,19 @@ class Command(BaseCommand):
 
 
 ### working with templates
+- create a folder named templates in the root directory and add html files such as home, aboutus, help
+- add the templates folder to `settings.py`
+```py
+TEMPLATES = [
+    ...
+    'DIRS' = [
+        BASE_DIR  "/templates"
+    ]
+   ...
+]
+```
+- similarly update views.py
+```py
+def home(request):
+    return render(request,"home.html")
+```
